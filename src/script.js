@@ -31,7 +31,7 @@
 			if (!f.classList.contains('loading'))
 				continue;
 			
-			var img = f.firstElementChild;
+			var img = f.querySelector('img');
 			
 			img.src = img.dataset.src;
 			
