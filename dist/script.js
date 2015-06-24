@@ -1,7 +1,9 @@
 (function() {
 	
 	var
-		frames
+		frames,
+		lastWndWidth = null,
+		mqls = []
 	;
 	
 	window.addEventListener('load', onLoadEvent, false);
@@ -11,19 +13,33 @@
 			
 		var w = 180*2;
 		while (w <= 1080) {
-			window.matchMedia('(min-width: ' + w + 'px)').addListener(loadVisibleImages); // no addEventListener?!?
+			var mql = window.matchMedia('(min-width: ' + w + 'px)');
+			mqls.push(mql);
+			mql.addListener(loadVisibleImages);
+			
 			w += 180;
 		}
 			
 		loadVisibleImages();
 	}
 	
-	function loadVisibleImages(/* mql */) {
-		console.log('loadVisibleImages');
+	function loadVisibleImages() {
+		if (window.innerWidth === lastWndWidth)
+			return;
 		
-		var n =  Math.floor(window.innerWidth / 180);
-		if (n > 7) n = 7;
-		console.log(n);
+		lastWndWidth = window.innerWidth;
+		
+		var n =  Math.floor(lastWndWidth / 180);
+		var maxCols = 7;
+		if (n >= maxCols) { 
+			n = maxCols;
+			
+			mqls.forEach(function(mql) {
+				mql.removeListener(loadVisibleImages);
+			});
+			
+			mqls = null;
+		}
 		
 		for (var i = 0; i < n; i++) {
 			var f = frames[i];
