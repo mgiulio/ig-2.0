@@ -47,7 +47,7 @@
 			if (f.classList.contains('loaded'))
 				continue;
 			
-			var img = f.querySelector('img');
+			var img = f.getElementsByTagName('img')[0];
 			
 			img.src = img.dataset.src;
 			
