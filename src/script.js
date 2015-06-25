@@ -9,7 +9,7 @@
 	window.addEventListener('load', onLoadEvent, false);
 	
 	function onLoadEvent() {
-		frames = [].slice.call(document.querySelectorAll('.instagram .frame'), 0);
+		frames = document.querySelectorAll('.instagram .frame');
 			
 		var w = 180*2;
 		while (w <= 1080) {
