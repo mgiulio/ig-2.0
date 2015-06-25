@@ -48,8 +48,15 @@ function run() {
  
  function css() {
 	var cssnext = require('cssnext');
+	
 	var input = fs.readFileSync('src/style.css', 'utf8');
-	var output = cssnext(input)
+	
+	var output = cssnext(input, {
+		'import': {
+			path: 'src'
+		}
+	});
+	
 	fs.writeFileSync('dist/style.css', output);
 }
  
