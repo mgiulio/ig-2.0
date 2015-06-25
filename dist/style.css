@@ -9,8 +9,7 @@ footer {
 .instagram {
 	margin: 0;
 	padding: 0;
-	height: 50vw 
-	;
+	height: 66.667vw;
 	overflow: hidden;
 }
 .instagram:after {
@@ -105,7 +104,7 @@ footer {
 		width: 50%;
 	}
 	.instagram {
-		height: 25vw;
+		height: 33.333vw;
 	}
 }
 @media screen and (min-width: 540px) {
@@ -113,7 +112,7 @@ footer {
 		width: 33.3333%;
 	}
 	.instagram {
-		height: 16.5vw;
+		height: 22.222vw;
 	}
 }
 @media screen and (min-width: 720px) {
@@ -121,7 +120,7 @@ footer {
 		width: 25%;
 	}
 	.instagram {
-		height: 12.5vw;
+		height: 16.667vw;
 	}
 }
 @media screen and (min-width: 900px) {
@@ -129,7 +128,7 @@ footer {
 		width: 20%;
 	}
 	.instagram {
-		height: 10vw;
+		height: 13.333vw;
 	}
 }
 @media screen and (min-width: 1080px) {
@@ -137,6 +136,6 @@ footer {
 		width: 16.5%;
 	}
 	.instagram {
-		height: 8.25vw;
+		height: 11.111vw;
 	}
 }
