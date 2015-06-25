@@ -128,7 +128,7 @@ footer {
 }
 @media screen and (min-width: 1080px) {
 	.instagram .frame {
-		width: 16.5%;
+		width: 16.667%;
 	}
 	.instagram {
 		height: calc((1 / (6 * var(--frameAspectRatio))) * 100)vw;
