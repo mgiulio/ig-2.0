@@ -6,20 +6,20 @@ footer {
 	border-top: 3px solid lime;
 }
 
-footer .shots {
+.instagram {
 	margin: 0;
 	padding: 0;
 	height: 50vw 
 	;
 	overflow: hidden;
 }
-footer .shots:after {
+.instagram:after {
 	clear: both;
 	content: '';
 	display: table;
 }
 
-footer .shots .frame {
+.instagram .frame {
 	position: relative;
 	
 	margin: 0;
@@ -38,14 +38,14 @@ footer .shots .frame {
 	color: #f6f6f6;
 } */
 
-footer .shots .frame img {
+.instagram .frame img {
 	width: 100%;
 	height: 100%;
 	-o-object-fit: cover;
 	   object-fit: cover;
 }
 
-footer .shots  figure figcaption {
+.instagram  .frame figcaption {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -67,7 +67,7 @@ footer .shots  figure figcaption {
 	-webkit-transition: opacity 0.5s;
 	        transition: opacity 0.5s;
 }
-footer .shots figure figcaption p {
+.instagram .frame figcaption p {
 	position: absolute;
 	width: 100%;
 	height: 25%;
@@ -93,50 +93,50 @@ footer .shots figure figcaption p {
 	
 	        transition: bottom 1s;
 }
-footer .shots figure:hover figcaption {
+.instagram .frame:hover figcaption {
 	opacity: 1;
 }
-footer .shots figure:hover figcaption p {
+.instagram .frame:hover figcaption p {
 	bottom: 0;
 }
 
 @media screen and (min-width: 360px) {
-	footer .shots .frame {
+	.instagram .frame {
 		width: 50%;
 	}
-	footer .shots {
+	.instagram {
 		height: 25vw;
 	}
 }
 @media screen and (min-width: 540px) {
-	footer .shots .frame {
+	.instagram .frame {
 		width: 33.3333%;
 	}
-	footer .shots {
+	.instagram {
 		height: 16.5vw;
 	}
 }
 @media screen and (min-width: 720px) {
-	footer .shots .frame {
+	.instagram.frame {
 		width: 25%;
 	}
-	footer .shots {
+	.instagram {
 		height: 12.5vw;
 	}
 }
 @media screen and (min-width: 900px) {
-	footer .shots .frame {
+	.instagram .frame {
 		width: 20%;
 	}
-	footer .shots {
+	.instagram {
 		height: 10vw;
 	}
 }
 @media screen and (min-width: 1080px) {
-	footer .shots .frame {
+	.instagram .frame {
 		width: 16.5%;
 	}
-	footer .shots {
+	.instagram {
 		height: 8.25vw;
 	}
 }

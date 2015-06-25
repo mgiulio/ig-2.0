@@ -9,7 +9,7 @@
 	window.addEventListener('load', onLoadEvent, false);
 	
 	function onLoadEvent() {
-		frames = [].slice.call(document.querySelectorAll('footer .shots .frame'), 0);
+		frames = [].slice.call(document.querySelectorAll('.instagram .frame'), 0);
 			
 		var w = 180*2;
 		while (w <= 1080) {
@@ -44,7 +44,7 @@
 		for (var i = 0; i < n; i++) {
 			var f = frames[i];
 			
-			if (!f.classList.contains('loading'))
+			if (f.classList.contains('loaded'))
 				continue;
 			
 			var img = f.querySelector('img');
@@ -53,7 +53,7 @@
 			
 			img.removeAttribute('data-src');
 			
-			f.classList.remove('loading');
+			f.classList.add('loaded');
 		}
 	}
 			
