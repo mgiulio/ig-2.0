@@ -1,6 +1,7 @@
 @import 'normalize.css';
 
 :root {
+	--frameWidth: 180px;
 	--frameAspectRatio: 1.5;
 }
 
@@ -94,7 +95,7 @@ footer {
 	bottom: 0;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 360px) { /* min-width: calc(var(--frameWidth) * 2) */
 	.instagram .frame {
 		width: 50%;
 	}
