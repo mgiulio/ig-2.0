@@ -58,6 +58,7 @@ function run() {
 	var input = fs.readFileSync('src/style.css', 'utf8');
 
 	postcss([
+		require('postcss-inline-comment')(),
 		require('postcss-import')({
 			path: 'src'}),
 		require('postcss-custom-properties')(),
