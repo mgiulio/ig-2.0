@@ -14,7 +14,7 @@ footer {
 .instagram {
 	margin: 0;
 	padding: 0;
-	height: calc((1 / (1 * var(--frameAspectRatio))) * 100)vw;
+	height: calc((1 / (1 * var(--frameAspectRatio))) * 100vw);
 	overflow: hidden;
 }
 .instagram:after {
@@ -100,7 +100,7 @@ footer {
 		width: 50%;
 	}
 	.instagram {
-		height: calc((1 / (2 * var(--frameAspectRatio))) * 100)vw;
+		height: calc((1 / (2 * var(--frameAspectRatio))) * 100vw);
 	}
 }
 @media screen and (min-width: 540px) {
@@ -108,7 +108,7 @@ footer {
 		width: 33.3333%;
 	}
 	.instagram {
-		height: calc((1 / (3 * var(--frameAspectRatio))) * 100)vw;
+		height: calc((1 / (3 * var(--frameAspectRatio))) * 100vw);
 	}
 }
 @media screen and (min-width: 720px) {
@@ -116,7 +116,7 @@ footer {
 		width: 25%;
 	}
 	.instagram {
-		height: calc((1 / (4 * var(--frameAspectRatio))) * 100)vw;
+		height: calc((1 / (4 * var(--frameAspectRatio))) * 100vw);
 	}
 }
 @media screen and (min-width: 900px) {
@@ -124,7 +124,7 @@ footer {
 		width: 20%;
 	}
 	.instagram {
-		height: calc((1 / (5 * var(--frameAspectRatio))) * 100)vw;
+		height: calc((1 / (5 * var(--frameAspectRatio))) * 100vw);
 	}
 }
 @media screen and (min-width: 1080px) {
@@ -132,7 +132,7 @@ footer {
 		width: 16.667%;
 	}
 	.instagram {
-		height: calc((1 / (6 * var(--frameAspectRatio))) * 100)vw;
+		height: calc((1 / (6 * var(--frameAspectRatio))) * 100vw);
 	}
 }
 
