@@ -41,12 +41,12 @@ function run() {
 	
 	var postcss = require('postcss');
 	
-	var input = fs.readFileSync('src/style.css', 'utf8');
+	var input = fs.readFileSync('src/css/style.css', 'utf8');
 
 	postcss([
 		require('postcss-inline-comment')(),
 		require('postcss-import')({
-			path: 'src'}),
+			path: 'src/css'}),
 		require('postcss-custom-properties')(),
 		require('postcss-calc')({
 			preserve: false,
@@ -70,7 +70,7 @@ function copyToDist() {
 	fs.emptyDirSync('dist');
 	
 	fs.copySync('src/index.html', 'dist/index.html');
-	fs.copySync('src/script.js', 'dist/script.js');
+	fs.copySync('src/js/script.js', 'dist/js/script.js');
 	fs.copySync(
 		'C:/Dropbox/mgiulio/prjexs/block-ui/blockui.js', //'src/blockui.js', 
 		'dist/blockui.js'
