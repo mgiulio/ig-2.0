@@ -9,6 +9,7 @@ var
 var targets = {
 	dev: function() {
 		css();
+		
 		fs.copySync('src/index.html', 'dist/index.html', {replace: true});
 		fs.copySync('src/script.js', 'dist/script.js', {replace: true});
 		fs.copySync(
@@ -52,17 +53,33 @@ function run() {
  */
  
  function css() {
-	var cssnext = require('cssnext');
+	var postcss = require('postcss');
 	
 	var input = fs.readFileSync('src/style.css', 'utf8');
-	
-	var output = cssnext(input, {
+
+	postcss([
+		require('postcss-import')({
+			path: 'src'}),
+		require('postcss-custom-properties')(),
+		require('postcss-calc')({
+			preserve: false,
+			precision: 5
+		}),
+		require('autoprefixer-core')()
+	])
+	.process(input, { 
+		//from: 'src/app.css', 
+		//to: 'app.css' 
+	})
+	.then(function(result) {
+		fs.writeFileSync('dist/style.css', result.css);
+        //if ( result.map ) fs.writeFileSync('app.css.map', result.map);
+    });
+	/* var output = cssnext(input, {
 		'import': {
 			path: 'src'
 		}
-	});
-	
-	fs.writeFileSync('dist/style.css', output);
+	}); */
 }
  
 function transpile(code) {
