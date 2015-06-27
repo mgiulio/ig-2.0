@@ -11,6 +11,11 @@ var targets = {
 		css();
 		fs.copySync('src/index.html', 'dist/index.html', {replace: true});
 		fs.copySync('src/script.js', 'dist/script.js', {replace: true});
+		fs.copySync(
+			'C:/Dropbox/mgiulio/prjexs/block-ui/blockui.js', //'src/blockui.js', 
+			'dist/blockui.js', 
+			{replace: true}
+		);
 	}/*,
 	rel: function() {
 		copyToDist(minify(transpile(fse.readFileSync(src))));

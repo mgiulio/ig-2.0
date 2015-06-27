@@ -19,7 +19,11 @@
 			
 			w += 180;
 		}
-			
+		
+		var spinner = document.querySelector('.spinner').cloneNode(true)
+		spinner.classList.remove('hidden');
+		activityIndicator.setForegroundElement(spinner);
+		
 		loadVisibleImages();
 	}
 	
@@ -48,6 +52,14 @@
 				continue;
 			
 			var img = f.getElementsByTagName('img')[0];
+			
+			activityIndicator.block(f);
+			/* img.onload = (function() {
+				var currf = f;
+				return function() {
+					activityIndicator.unblock(currf);
+				};
+			})(); */
 			
 			img.src = img.dataset.src;
 			
