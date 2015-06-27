@@ -69,11 +69,11 @@ function copyToDist() {
 	
 	fs.emptyDirSync('dist');
 	
-	fs.copySync('src/index.html', 'dist/index.html', {replace: true});
-	fs.copySync('src/script.js', 'dist/script.js', {replace: true});
+	fs.copySync('src/index.html', 'dist/index.html');
+	fs.copySync('src/script.js', 'dist/script.js');
 	fs.copySync(
 		'C:/Dropbox/mgiulio/prjexs/block-ui/blockui.js', //'src/blockui.js', 
-		'dist/blockui.js', 
-		{replace: true}
+		'dist/blockui.js'
 	);
+	fs.copySync('src/img', 'dist/img');
 }
