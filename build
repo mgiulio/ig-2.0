@@ -37,6 +37,8 @@ function run() {
  */
  
  function css() {
+	console.log('Task css...');
+	
 	var postcss = require('postcss');
 	
 	var input = fs.readFileSync('src/style.css', 'utf8');
