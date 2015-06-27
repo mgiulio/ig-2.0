@@ -1,23 +1,14 @@
 #!/usr/bin/env node
 
 var 
-	fs = require('fs-extra'),
-	FILE_ENCODING = 'utf-8',
-	EOL = '\n'
+	fs = require('fs-extra')
 ;
 
 var targets = {
 	dev: function() {
 		css();
 		copyToDist();
-	}/*,
-	rel: function() {
-		copyToDist(minify(transpile(fse.readFileSync(src))));
-	},
-	transpile: function() {
-		copyToDist(transpile(fse.readFileSync(src)));
 	}
-	*/
 };
 
 run();
@@ -69,40 +60,6 @@ function run() {
 		fs.writeFileSync('dist/style.css', result.css);
         //if ( result.map ) fs.writeFileSync('app.css.map', result.map);
     });
-	/* var output = cssnext(input, {
-		'import': {
-			path: 'src'
-		}
-	}); */
-}
- 
-function transpile(code) {
-	console.log('Transpilation...');
-	
-	var babel = require('babel-core');
-	
-	var result = babel.transform(code);
-	
-	return result.code;
-}
-	
-function minify(code) {
-	console.log('Minification...');
-	
-	var UglifyJS = require('uglify-js');
-	
-	try {
-		var result = UglifyJS.minify(code, {
-			fromString: true
-			//outSourceMap: "inline-editor.js.map"
-		});
-	} catch (e) {
-		console.log('*** Uglify JS error ***');
-		console.log(e.message + ' in ' +  e.filename + ' @ ' + e.line + ':' + e.col);
-		throw e;
-	}
-	
-	return result.code;
 }
 
 function copyToDist() {
@@ -117,8 +74,4 @@ function copyToDist() {
 		'dist/blockui.js', 
 		{replace: true}
 	);
-}
-		
-function notify(msg) {
-	console.log('=== ' + msg + '===');
 }
