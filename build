@@ -9,14 +9,7 @@ var
 var targets = {
 	dev: function() {
 		css();
-		
-		fs.copySync('src/index.html', 'dist/index.html', {replace: true});
-		fs.copySync('src/script.js', 'dist/script.js', {replace: true});
-		fs.copySync(
-			'C:/Dropbox/mgiulio/prjexs/block-ui/blockui.js', //'src/blockui.js', 
-			'dist/blockui.js', 
-			{replace: true}
-		);
+		copyToDist();
 	}/*,
 	rel: function() {
 		copyToDist(minify(transpile(fse.readFileSync(src))));
@@ -112,18 +105,20 @@ function minify(code) {
 	return result.code;
 }
 
-function copyToDist(code) {
-	console.log('Writing processed code to ' + dest + '...');
+function copyToDist() {
+	console.log('Task copyToDist...');
 	
-	fse.writeFileSync(dest, code);
-	//fse.writeFileSync(dest + '.map', uglifyResult.map);
+	fs.emptyDirSync('dist');
+	
+	fs.copySync('src/index.html', 'dist/index.html', {replace: true});
+	fs.copySync('src/script.js', 'dist/script.js', {replace: true});
+	fs.copySync(
+		'C:/Dropbox/mgiulio/prjexs/block-ui/blockui.js', //'src/blockui.js', 
+		'dist/blockui.js', 
+		{replace: true}
+	);
 }
 		
-function cleanDist() {
-	notify('Cleaning dit directory');
-	fse.emptyDirSync('dist');
-}
-
 function notify(msg) {
 	console.log('=== ' + msg + '===');
 }
