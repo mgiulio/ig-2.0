@@ -54,12 +54,12 @@
 			var img = f.getElementsByTagName('img')[0];
 			
 			activityIndicator.block(f);
-			/* img.onload = (function() {
+			img.onload = (function() {
 				var currf = f;
 				return function() {
 					activityIndicator.unblock(currf);
 				};
-			})(); */
+			})();
 			
 			img.src = img.dataset.src;
 			
