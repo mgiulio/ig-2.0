@@ -20,9 +20,9 @@
 			w += 180;
 		}
 		
-		var spinner = document.querySelector('.spinner').cloneNode(true)
-		spinner.classList.remove('hidden');
-		activityIndicator.setForegroundElement(spinner);
+		var activityIndicatorFg = document.querySelector('.activity-indicator').cloneNode(true)
+		activityIndicatorFg.classList.remove('hidden');
+		activityIndicator.setForegroundElement(activityIndicatorFg);
 		
 		loadVisibleImages();
 	}

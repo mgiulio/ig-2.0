@@ -1,5 +1,5 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-
+/* Lite version */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS and IE text size adjust after device orientation change,
@@ -339,14 +339,14 @@ footer {
 }
 
 /* 
- * A CSS-only 'hola' spinner parameterized with CSS variables.
+ * A CSS-only 'hola-wave' spinner parameterized with CSS variables.
  *
  * Can be post-processed with the [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) [PostCSS](https://github.com/postcss/postcss) plugin.
  * 
- * Ported and adapted from http://tobiasahlin.com/spinkit/ , the third spinner  
+ * Ported and adapted from http://tobiasahlin.com/spinkit/ , the third spinner.  
  */
 
-.spinner {
+.hola-bars {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -354,7 +354,7 @@ footer {
 	font-size: 0px;
  }
 
-.spinner > * {
+.hola-bars > * {
 	display: inline-block;
 	width: 5px;
 	height: 25px;
@@ -366,29 +366,29 @@ footer {
 	
 	        animation: stretch 1.2s infinite ease-in-out;
 }
-.spinner > *:last-child {
+.hola-bars > *:last-child {
 	margin-right: 0;
 }
 
-.spinner > *:nth-child(2) {
+.hola-bars > *:nth-child(2) {
 	-webkit-animation-delay: 0.05s;
 	        animation-delay: 0.05s;
 }
-.spinner > *:nth-child(3) {
+.hola-bars > *:nth-child(3) {
 	-webkit-animation-delay: 0.1s;
 	        animation-delay: 0.1s;
 }
-.spinner > *:nth-child(4) {
+.hola-bars> *:nth-child(4) {
 	-webkit-animation-delay: 0.15s;
 	        animation-delay: 0.15s;
 }
-.spinner > *:nth-child(5) {
+.hola-bars > *:nth-child(5) {
 	-webkit-animation-delay: 0.2s;
 	        animation-delay: 0.2s;
 }
 
 @-webkit-keyframes stretch {
-	0%, 40%, 100% { 
+	0%, 40% { 
 		-webkit-transform: scaleY(1.0); 
 		        transform: scaleY(1.0);
 	}  
@@ -399,7 +399,7 @@ footer {
 }
 
 @keyframes stretch {
-	0%, 40%, 100% { 
+	0%, 40% { 
 		-webkit-transform: scaleY(1.0); 
 		        transform: scaleY(1.0);
 	}  
@@ -408,6 +408,6 @@ footer {
 		        transform: scaleY(2.0);
 	}
 }
-.spinner.hidden {
+.activity-indicator.hidden {
 	display: none;
 }

@@ -1,4 +1,4 @@
-@import 'normalize.css';
+@import 'normalize-lite.css';
 
 :root {
 	--frameWidth: 180px;
@@ -136,7 +136,7 @@ footer {
 	}
 }
 
-@import 'spinner.css';
-.spinner.hidden {
+@import 'hola-bars.css';
+.activity-indicator.hidden {
 	display: none;
 }
