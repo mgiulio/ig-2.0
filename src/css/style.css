@@ -32,17 +32,22 @@ footer {
 	width: 100%;
 	height: 100%;
 	
-	background-color: gray;
-	//border: 1px solid #aaa;
-	outline: 1px solid #aaa;
+	background-color: #808080;
 }
 
-/* footer .shots .frame.loading:after {
-	content: 'loading...';
-	color: #f6f6f6;
-} */
-
-.instagram .frame img {
+.instagram .frame.unloaded img {
+	width: 100%;
+	height: 100%;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.instagram .frame.loading img {
+	display: none;
+}
+.instagram .frame.loaded img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -95,48 +100,73 @@ footer {
 	bottom: 0;
 }
 
-@media screen and (min-width: 360px) { /* min-width: calc(var(--frameWidth) * 2) */
+.frame .activity-mask  {
+	position: absolute;
+	background: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	display: none;
+}
+.frame .activity-mask .activity-indicator {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.frame.loading .activity-mask {
+	display: block;
+}
+
+$border: 1px solid #646464;
+$numShots: 10;
+
+.num-cols {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	
+	//position: absolute;
+	//left: -9999px;
+
+	//position: absolute;
+	//visibility: hidden;
+
+	//display: none;
+}
+.num-cols:before {
+	content: '1';
+}
+
+@media screen and (min-width: 2 * $frameWidth) {
 	.instagram .frame {
-		width: 50%;
-	}
-	.instagram {
-		height: calc((1 / (2 * var(--frameAspectRatio))) * 100vw);
+		border-right: $border;
 	}
 }
-@media screen and (min-width: 540px) {
-	.instagram .frame {
-		width: 33.3333%;
-	}
-	.instagram {
-		height: calc((1 / (3 * var(--frameAspectRatio))) * 100vw);
-	}
-}
-@media screen and (min-width: 720px) {
-	.instagram.frame {
-		width: 25%;
-	}
-	.instagram {
-		height: calc((1 / (4 * var(--frameAspectRatio))) * 100vw);
-	}
-}
-@media screen and (min-width: 900px) {
-	.instagram .frame {
-		width: 20%;
-	}
-	.instagram {
-		height: calc((1 / (5 * var(--frameAspectRatio))) * 100vw);
+
+@for $i from 2 through $numShots {
+	@media screen and (min-width: $i * $frameWidth) and (max-width: ($i+1)*$frameWidth - 1) {
+		.num-cols:before {
+			content: '#{$i}';
+		}
+		.instagram .frame {
+			width: 1 / $i * 100%;
+		}
+		.instagram {
+			height: (1 / ($i * $frameAspectRatio)) * 100vw;
+		}
+		.instagram .frame:nth-child(#{$i}) {
+			border-right: none;
+		}
 	}
 }
-@media screen and (min-width: 1080px) {
-	.instagram .frame {
-		width: 16.667%;
-	}
-	.instagram {
-		height: calc((1 / (6 * var(--frameAspectRatio))) * 100vw);
+@media screen and (min-width: $numShots * $frameWidth) and (max-width: ($numShots+1)*$frameWidth - 1) {
+	.num-cols:before {
+		content: '9999';
 	}
 }
 
 @import 'hola-bars.css';
-.activity-indicator.hidden {
-	display: none;
-}

@@ -71,9 +71,5 @@ function copyToDist() {
 	
 	fs.copySync('src/index.html', 'dist/index.html');
 	fs.copySync('src/js/script.js', 'dist/js/script.js');
-	fs.copySync(
-		'C:/Dropbox/mgiulio/prjexs/block-ui/blockui.js', //'src/blockui.js', 
-		'dist/blockui.js'
-	);
 	fs.copySync('src/img', 'dist/img');
 }
